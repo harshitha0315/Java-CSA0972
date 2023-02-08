@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		try
+		{
+			int fact=1,n,i;
+			Scanner sc=new Scanner(System.in);
+			System.out.println("N=");
+			n=sc.nextInt();
+			if(n<0)
+			{
+				System.out.println("invalid due to negative value");
+			}
+			else if(n==0)
+			{
+				System.out.println("Factorial=1");
+			}
+			else
+			{
+				for(i=1;i<=n;i++)
+				{
+						fact=fact*i;
+				}
+				System.out.println("Factorial="+fact);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("invalid due to alphabets");
+		}
+	}
+}
