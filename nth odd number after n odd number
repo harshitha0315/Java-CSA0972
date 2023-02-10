@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class OddNumbers1 {
+	private static Scanner sc;
+	public static void main(String[] args) 
+	{
+	    try
+	    {
+		    int number, i;
+		    sc = new Scanner(System.in);
+		
+		    System.out.print(" Please Enter any Number : ");
+		    number = sc.nextInt();
+		    if(number<=0)
+		    {
+		        System.out.print("invalid due to negative value");
+		    }
+		    else
+		    {
+		        for(i = 1; i < number; i++)
+		        {
+			        if(i % 2 != 0)
+			        {
+			        	System.out.print(i +"\t"); 
+			        }
+		        }
+		    }
+	    }
+	    catch(Exception e)
+	    {
+	        System.out.print("invalid due to floating value");
+	    }
+	}
+}
