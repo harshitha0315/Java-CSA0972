@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Main {
+   public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      int num, primeCount = 0, compositeCount = 0;
+
+      while (true) {
+         System.out.print("\nEnter a number (0 to exit): ");
+         try {
+            num = sc.nextInt();
+            if (num == 0) {
+               break;
+            }
+            if(num<0)
+            {
+                System.out.print("\ninvalid due to negative value");
+                break;
+            }
+            if (isPrime(num)) {
+               primeCount++;
+            } else {
+               compositeCount++;
+            }
+         } catch (Exception e) {
+            System.out.println("\nInvalid input. Enter a valid integer.");
+            sc.nextLine();
+         }
+      }
+      System.out.println("\nTotal prime numbers: " + primeCount);
+      System.out.println("\nTotal composite numbers: " + compositeCount);
+   }
+
+   public static boolean isPrime(int n) {
+      if (n <= 1) {
+         return false;
+      }
+      for (int i = 2; i < n; i++) {
+         if (n % i == 0) {
+            return false;
+         }
+      }
+      return true;
+   }
+}
