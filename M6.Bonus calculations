@@ -1,0 +1,50 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        try {
+            Scanner sc=new Scanner(System.in);
+            double bonus=0;
+            System.out.print("Enter the grade of the employee:");
+            char a=sc.next().charAt(0);
+            System.out.print("Enter the salary of the employee:");
+            int b=sc.nextInt();
+            if(b<=0)
+            {
+                System.out.println("invalid due to negative value");
+            }
+            else{
+                if(a=='A')
+                {
+                    bonus=b*(0.05);
+                    if(b<10000)
+                    {
+                        bonus=bonus+b*(0.02);
+                    }
+                    System.out.println("Salary="+b);
+                    System.out.println("Bonus="+bonus);
+                    System.out.println("Total to be paid="+(b+bonus));
+                }
+                else if(a=='B')
+                {
+                    bonus=b*(0.1);
+                    if(b<10000)
+                    {
+                        bonus=bonus+b*(0.02);
+                    }
+                    System.out.println("Salary="+b);
+                    System.out.println("Bonus="+bonus);
+                    System.out.println("Total to be paid="+(b+bonus));
+                }
+                else{
+                    System.out.println("Enter a valid grade");
+                }
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.print("invalid input");
+        }
+    }
+}
