@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int m = 0, n = 0;
+        boolean validInput = false;
+        while (!validInput) {
+            try {
+                System.out.print("Enter the number m: ");
+                m = sc.nextInt();
+                System.out.print("Enter the number n: ");
+                n = sc.nextInt();
+                if (m <= 0 || n <= 0) {
+                    throw new Exception("Both m and n must be positive numbers");
+                }
+                validInput = true;
+            } catch (Exception e) {
+                System.out.println("Invalid input. " + e.getMessage());
+                sc.nextLine();
+            }
+        }
+        System.out.println("Multiplication table of " + m + " up to " + n + ":");
+        for (int i = 1; i <= n; i++) {
+            System.out.println(m + " x " + i + " = " + m * i);
+        }
+    }
+}
