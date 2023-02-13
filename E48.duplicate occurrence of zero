@@ -1,0 +1,31 @@
+import java.util.LinkedList;
+import java.util.Queue; 
+public class Main {
+    public static void main(String[] args) {        
+        Main main = new Main();
+        int[] data = {1,0,2,3,0,4,5,0};
+        main.duplicateZeros(data);
+        for(int i : data) {
+            System.out.print(i + ", ");     
+        }                   
+    } 
+    public void duplicateZeros(int[] arr) {      
+        Queue<Integer> queue = new LinkedList<>();
+        for(int i=0; i<arr.length; i++){ 
+            queue.add(arr[i]);
+        }  
+        int temp;
+        for(int i=0; i<arr.length; i++){            
+            temp = queue.poll();
+            if(temp == 0){
+                arr[i] = temp;
+                if(i+1<arr.length){
+                    arr[i+1] = temp;
+                    i++;
+                }
+            }else {
+                arr[i] = temp;
+            } 
+        }
+    }
+}
